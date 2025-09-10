@@ -1,23 +1,44 @@
 import PySimpleGUI as sg
 import os
+import sys
 from PIL import Image
 import io
+
+# --- 增加一个辅助函数来处理资源路径 ---
+def resource_path(relative_path):
+    """ 获取资源的绝对路径，兼容开发环境和PyInstaller打包环境 """
+    try:
+        # PyInstaller 创建的临时文件夹的路径存储在 _MEIPASS 中
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 # --- 游戏配置与资源 ---
 sg.theme('Reddit')
 TARGET_IMAGE_SIZE = (400, 400)
+
+# --- 使用 resource_path 函数来定义图片路径 ---
 IMAGE_PATHS = {
-    'neutral': 'assets/cat_neutral.png',
-    'happy': 'assets/cat_happy.png',
-    'annoyed': 'assets/cat_annoyed.png'
+    'neutral': resource_path('assets/cat_neutral.png'),
+    'happy':   resource_path('assets/cat_happy.png'),
+    'annoyed': resource_path('assets/cat_annoyed.png')
 }
 
+def show_gentle_error(message):
+    sg.popup(message, title='呜...出错了喵', custom_text='好的喵')
+
+# 检查图片文件是否存在
+for mood, path in IMAGE_PATHS.items():
+    if not os.path.exists(path):
+        show_gentle_error(f'可恶！图片文件找不到了喵 (路径: {path})\n\n请确保脚本可以找到 "assets" 文件夹。')
+        exit()
 
 # --- 核心游戏函数 ---
 def play_game(cat_name):
     """封装了完整游戏逻辑的函数，返回用户选择的下一步操作"""
 
-    # ... (内部的数据、函数、布局等都与上一版相同) ...
     game_state = {
         'affection': 50, 'stage': 'start', 'cat_mood': 'neutral',
         'cat_name': cat_name, 'approach_attempts': 0
