@@ -1,5 +1,8 @@
 # 与猫的奇遇 (A Cat's Encounter)
 
+![Language](https://img.shields.io/badge/Language-Python-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 ![Cat](assets/cat_happy.png)
 
 一个用Python制作的、简单的GUI文字冒险游戏！你将遇到一只神秘的猫咪，并通过一系列选择来尝试获得它的信任和好感。
@@ -34,6 +37,16 @@ python cat_game.py
 ```
 游戏窗口就会出现啦，开始你和猫猫的故事吧！
 
+## 快速开始 (Windows 用户)
+
+如果你不熟悉以上Python环境配置，也可以直接下载打包好的游戏程序：
+
+1.  进入Releases下载页面；
+2.  在最新版本的 "Assets" 区域，下载 `.exe` 文件。
+3.  下载完成后，双击运行即可开始游戏！
+
+**注意：** 程序由PyInstaller打包，部分杀毒软件可能会出现误报。本程序保证安全无毒，请放心运行喵~
+
 ## Acknowledgements
 
 非常感谢Google Gemini对作者提供的大力帮助！没有它，本项目的许多bug都无法解决🥹
@@ -43,5 +56,3 @@ python cat_game.py
 ## License
 
 本项目采用 MIT License 授权。
-
-
