@@ -3,7 +3,10 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-![Cat](assets/cat_happy.png)
+<p align="center">
+<img src="https://i.pinimg.com/736x/c8/14/dc/c814dcc875a5593039e0502feb522b0d.jpg" alt="logo" class="center" width="250" height="200" ><br>
+</p> 
+
 
 一个用Python制作的、简单的GUI文字冒险游戏！你将遇到一只神秘的猫咪，并通过一系列选择来尝试获得它的信任和好感。
 
