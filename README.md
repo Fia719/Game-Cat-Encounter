@@ -33,7 +33,7 @@ A little game in which you will encounter a mysterious cat. What will happen the
 pip install -r requirements.txt
 ```
 
-### 4. 运行游戏！
+### 4. 运行游戏
 在同一个终端里，运行：
 ```bash
 python cat_game.py
